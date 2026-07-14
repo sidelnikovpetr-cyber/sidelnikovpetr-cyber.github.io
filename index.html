@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Peter Sidelnikov</title>
+<meta name="description" content="Systematic multi-asset macro. Independent research and systematic investing.">
+<style>
+  :root{
+    --navy:#1F4E79; --navy-dark:#12283f; --gold:#9C7B14; --gold-bright:#C9A227;
+    --ink:#1a2634; --muted:#6b7683; --line:#e7e2d6; --bg:#fdfcf9; --card:#ffffff;
+  }
+  @media (prefers-color-scheme: dark){
+    :root{ --navy:#7ba7d6; --navy-dark:#cfe0f0; --gold:#d8b64a; --gold-bright:#e5c766;
+      --ink:#e8ebef; --muted:#9aa5b1; --line:#2a3340; --bg:#0f151c; --card:#141b24; }
+  }
+  *{ box-sizing:border-box; margin:0; padding:0; }
+  html{ -webkit-font-smoothing:antialiased; text-rendering:optimizeLegibility; }
+  body{
+    font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Helvetica,Arial,sans-serif;
+    color:var(--ink); background:var(--bg); line-height:1.62; font-size:17px;
+    padding:64px 22px 80px;
+  }
+  .wrap{ max-width:640px; margin:0 auto; }
+
+  /* header */
+  header{ display:flex; align-items:center; gap:22px; margin-bottom:14px; }
+  .portrait{
+    width:96px; height:96px; border-radius:14px; object-fit:cover; object-position:center 16%;
+    border:1.5px solid var(--gold); flex:none;
+  }
+  .name{ font-size:29px; font-weight:750; letter-spacing:-.3px; color:var(--navy-dark); line-height:1.1; }
+  .tag{ margin-top:6px; font-size:15.5px; color:var(--gold); font-weight:600; }
+  .creds{ margin-top:5px; font-size:13px; color:var(--muted); letter-spacing:.2px; }
+
+  .lede{ font-size:18px; color:var(--ink); margin:26px 0 6px; }
+  .lede b{ font-weight:680; color:var(--navy-dark); }
+
+  section{ margin-top:34px; }
+  .label{
+    font-size:12px; font-weight:700; letter-spacing:2.2px; text-transform:uppercase;
+    color:var(--gold); margin-bottom:14px;
+    padding-bottom:8px; border-bottom:1px solid var(--line);
+  }
+  p{ margin-bottom:13px; color:var(--ink); }
+  p .sub{ color:var(--muted); }
+
+  a{ color:var(--navy); text-decoration:none; border-bottom:1px solid rgba(156,123,20,.4); transition:border-color .15s,color .15s; }
+  a:hover{ color:var(--gold); border-bottom-color:var(--gold); }
+
+  /* role rows */
+  .role{ display:flex; justify-content:space-between; gap:16px; align-items:baseline; padding:7px 0; }
+  .role + .role{ border-top:1px dotted var(--line); }
+  .role .r-name{ color:var(--ink); }
+  .role .r-name b{ font-weight:680; color:var(--navy-dark); }
+  .role .r-when{ color:var(--muted); font-size:14px; white-space:nowrap; font-variant-numeric:tabular-nums; }
+
+  /* link list */
+  .links{ list-style:none; }
+  .links li{ padding:9px 0; border-top:1px dotted var(--line); display:flex; justify-content:space-between; gap:14px; align-items:baseline; }
+  .links li:first-child{ border-top:none; }
+  .links .l-desc{ color:var(--muted); font-size:14px; text-align:right; }
+
+  footer{ margin-top:46px; padding-top:16px; border-top:1px solid var(--line); font-size:14px; color:var(--muted); }
+  footer a{ border:none; }
+
+  @media (max-width:480px){
+    body{ padding:44px 18px 60px; font-size:16px; }
+    header{ gap:16px; }
+    .portrait{ width:78px; height:78px; }
+    .name{ font-size:24px; }
+    .role,.links li{ flex-direction:column; gap:2px; }
+    .role .r-when,.links .l-desc{ text-align:left; }
+  }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <header>
+    <img class="portrait" src="data:image/jpeg;base64,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" alt="Peter Sidelnikov">
+    <div>
+      <div class="name">Peter Sidelnikov</div>
+      <div class="tag">Systematic multi-asset macro</div>
+      <div class="creds">CFA Level II candidate · MBA</div>
+    </div>
+  </header>
+
+  <p class="lede">
+    I build <b>systematic, multi-asset macro strategies</b> — turning top-down macro into
+    testable, risk-controlled allocation. I treat overfitting as the claim to disprove, not defend,
+    and hold a hard risk cap across regimes. The goal is to control the downside first.
+  </p>
+
+  <section>
+    <div class="label">Now</div>
+    <p>
+      Independent macro research and systematic investing, based in Dubai. I've finished a
+      19-year walk-forward strategy and I'm putting it through the honest sequence:
+      a validated backtest, a full research paper with its limits, live paper-trading posted
+      monthly against the backtest, and real capital only if it holds up live.
+    </p>
+  </section>
+
+  <section>
+    <div class="label">Before</div>
+    <div class="role"><span class="r-name"><b>Director</b>, Investment Strategy &amp; Asset Allocation — Gazprombank</span><span class="r-when">2020–2024</span></div>
+    <div class="role"><span class="r-name"><b>Investment Manager</b> — Sberbank Private Banking</span><span class="r-when">2019</span></div>
+    <div class="role"><span class="r-name"><b>Senior Broker</b> — Otkritie</span><span class="r-when">2017–2019</span></div>
+    <div class="role"><span class="r-name"><b>Relationship Manager</b> — Family Office &amp; BCS Private Banking</span><span class="r-when">2012–2016</span></div>
+  </section>
+
+  <section>
+    <div class="label">Work</div>
+    <ul class="links">
+      <li><a href="https://github.com/sidelnikovpetr-cyber/systematic-macro-strategy/blob/main/Research_Paper.pdf">Research paper</a><span class="l-desc">method, results, honest limits</span></li>
+      <li><a href="https://github.com/sidelnikovpetr-cyber/systematic-macro-strategy/blob/main/Strategy_Kit_2pager.pdf">Strategy kit</a><span class="l-desc">two-page summary</span></li>
+      <li><a href="https://github.com/sidelnikovpetr-cyber/systematic-macro-strategy">Repository</a><span class="l-desc">paper, kit &amp; overview on GitHub</span></li>
+    </ul>
+  </section>
+
+  <section>
+    <div class="label">Elsewhere</div>
+    <ul class="links">
+      <li><a href="https://www.linkedin.com/in/sidelnikovpetr/">LinkedIn</a><span class="l-desc">writing &amp; monthly live updates</span></li>
+      <li><a href="https://github.com/sidelnikovpetr-cyber">GitHub</a><span class="l-desc">sidelnikovpetr-cyber</span></li>
+      <li><a href="mailto:sidelnikov.petr@gmail.com">Email</a><span class="l-desc">sidelnikov.petr@gmail.com</span></li>
+    </ul>
+  </section>
+
+  <footer>
+    Peter Sidelnikov, MBA · Multi-Asset Macro · Systematic Investing
+  </footer>
+
+</div>
+</body>
+</html>
